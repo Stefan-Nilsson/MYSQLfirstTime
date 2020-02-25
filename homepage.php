@@ -12,12 +12,6 @@
 </head>
 <body>
 
-<!--<form method="post">
-    <input type="hidden" name="submitted">
-    <button type="submit" class="btn btn-danger">Refresh</button>
-</form>-->
-
-
     <form method="post">
 
         User ID : <input type = "text" name = "user_id" />
