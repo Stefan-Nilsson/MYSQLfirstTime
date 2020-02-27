@@ -1,5 +1,5 @@
 <?php
-require('view/homepage.php');
+
 require('model/connectionClass.php');
 require('model/DataReader.php');
 require('model/Inserter.php');
@@ -13,8 +13,7 @@ class homePageController
         $connector = new connectionClass;
         $connector->getConnection();
         $reader = new DataReader();
-        //$user = $reader->readData();
-        $reader->returnTable();
+        $students = $reader->readData();
         if(!$_SERVER['REQUEST_METHOD']){
             echo 'hello';
         }
@@ -24,6 +23,9 @@ class homePageController
 
 
         }
+        require('view/homepage.php');
+        //var_dump();
     }
+
 
 }

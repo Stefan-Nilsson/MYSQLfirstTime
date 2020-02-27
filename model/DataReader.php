@@ -5,23 +5,20 @@ class DataReader extends connectionClass
 {
     public function readData()
     {
-        if(!$this->getConnection())
-        {
-            die("Connection failed");
-        }
 
 
-        $getUsers = $this->getConnection()->prepare("SELECT * FROM student ORDER BY id ASC");
-        $getUsers->execute();
-        return $getUsers->fetchAll();
-
+        $data = ("SELECT * FROM student.student ORDER BY id ASC");
+        $getUsers = $this->getConnection()->prepare($data);
+        $getUsers->execute([]);
+        $users = $getUsers->fetchAll(PDO::FETCH_ASSOC);
+        return $users;
     }
-
-    public function returnTable()
+    public function getSingleUserData(): array
     {
-        $users = $this->readData();
-        foreach ($users as $user) {
-            echo '<tr>' . '<td>' . $user['id'] . '</td>' . '</br>'. '<td>' . $user['first_name'] . '</td>'. '<td>' . $user['last_name'] . '</td>' . '<td>' . $user['username'] .'</td>' . '<td>' . $user['linkedin'] .'</td>' . '<td>' . $user['github'] .'</td>' . '<td>' . $user['email'] .'</td>' . '<td>' . $user['preferred_language'] .'</td>' . '<td>' . $user['avatar'] .'</td>' . '<td>' . $user['video'] .'</td>' . '<td>' . $user['quote'] .'</td>' . '<td>' . $user['quote_author'] .'</td>' . '<td>' . $user['created_at'] .'</td>' . '</tr>';
-        }
+        $sql = "SELECT * FROM student WHERE id = :id";
+        $statement = $this->getConnection()->prepare($sql);
+        $userID = $_GET["user"];
+        $statement->execute([$userID]);
+        return $statement->fetch(PDO:: FETCH_ASSOC);
     }
 }

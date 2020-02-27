@@ -16,14 +16,24 @@
 
     <form method="post">
         <button type="submit" class="btn btn-primary" name="refresh">clear post</button>
-        <!--   <div class="form-row">
-               <div class="form-group col-md-6">
-                   <label for="email">ID:</label>
-                   <input type="text" id="id" name="id" class="form-control"/>
-               </div>
-               <div></div>
-           </div>-->
+        <?php foreach ($students as $print): ?>
+    <table>
+        <tr>
+            <td>
+                <?php echo $print['id']  ?>
 
+            </td>
+            <td>
+                <a href="profilepage.php?<?php echo $print['first_name']?>=<?php echo $print['id']?>"> <?php echo $print['first_name']  ?></a>
+
+            </td>
+            <td>
+                <?php echo $print['last_name']  ?>
+
+            </td>
+        </tr>
+        <?php endforeach;?>
+        </table>
         <fieldset>
             <legend>Information</legend>
 
