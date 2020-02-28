@@ -11,16 +11,16 @@
 </head>
 <body>
 <fieldset>
-            <legend>Information</legend>
+            <legend>Create your account</legend>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="street">First name:</label>
-                    <input type="text" name="first_name" id="first_name" class="form-control" required>
+                    <label for="street">Username:</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="streetnumber">Last name:</label>
-                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                    <label for="streetnumber">password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
                 </div>
             </div>
   </fieldset>

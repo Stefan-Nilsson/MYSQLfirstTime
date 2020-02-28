@@ -11,7 +11,7 @@
 </head>
 <body>
 <fieldset>
-    <legend>Create your account</legend>
+    <legend>Login</legend>
 
     <div class="form-row">
         <div class="form-group col-md-6">
