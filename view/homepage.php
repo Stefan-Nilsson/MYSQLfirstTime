@@ -11,6 +11,7 @@
 </head>
 <body>
 <a href="?login=">login</a>
+<a href="?register=">register</a>
 <div class="container">
     <h1>Form to test MySQL</h1>
 

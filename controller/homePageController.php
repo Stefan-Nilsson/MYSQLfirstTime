@@ -17,13 +17,18 @@ class homePageController
         $students = $reader->readData();
 
         if(!$_SERVER['REQUEST_METHOD']){
-            echo 'hello';
-            $_SESSION = $_POST;
+            echo 'submit something!';
+
+        } else if (empty($_POST)){
+            echo 'submit something!';
+
         }
+
         else {
+
             $insertion = new Inserter();
             $insertion->insert($_POST['first_name'],$_POST['last_name'],$_POST['username'],$_POST['linkedin'],$_POST['github'],$_POST['email'],$_POST['preferred_language'],$_POST['avatar'],$_POST['video'],$_POST['quote'],$_POST['quote_author']);
-            $_SESSION = $_POST;
+
         }
         require('view/homepage.php');
     }
