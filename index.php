@@ -6,9 +6,13 @@ error_reporting(E_ALL);
 session_start();
 require('controller/homePageController.php');
 require('controller/profileController.php');
+require('controller/loginController.php');
+require('controller/registerController.php');
 $homePageController = new homePageController();
 $connector = new connectionClass();
 $profile = new profileController();
+$register = new registerController();
+$login = new loginController();
 $connector->getConnection();
 
 
@@ -33,6 +37,12 @@ whatIsHappening();
 if (isset($_GET['user'])){
     $profile->render();
 
+}
+else if (isset($_GET['register'])) {
+    $register->render();
+}
+else if (isset($_GET['login'])){
+    $login->render();
 }
 else
     {

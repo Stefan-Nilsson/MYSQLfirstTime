@@ -10,7 +10,7 @@
     <title>FormforConnection</title>
 </head>
 <body>
-
+<a href="?login=">login</a>
 <div class="container">
     <h1>Form to test MySQL</h1>
 
