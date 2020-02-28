@@ -13,7 +13,7 @@ class DataReader extends connectionClass
         $users = $getUsers->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
-    public function getSingleUserData(): array
+   public function getSingleUserData(): array
     {
         $sql = "SELECT * FROM student WHERE id = :id";
         $statement = $this->getConnection()->prepare($sql);

@@ -24,7 +24,7 @@
 
             </td>
             <td>
-                <a href="profilepage.php?<?php echo $print['first_name']?>=<?php echo $print['id']?>"> <?php echo $print['first_name']  ?></a>
+                <a href="?user=<?php //echo $print['first_name']?><?php echo $print['id']?>"> <?php echo $print['first_name']  ?></a>
 
             </td>
             <td>
